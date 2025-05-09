@@ -1,0 +1,14 @@
+[
+    { "id": "asthma", "label": "Asthma/COPD" },
+    { "id": "breathing", "label": "Breathing Difficulties" },
+    { "id": "heartAttack", "label": "Heart Attack/Stroke" },
+    { "id": "bloodPressure", "label": "Blood Pressure" },
+    { "id": "irregularHeartbeat", "label": "Irregular Heartbeat" },
+    { "id": "otherCardiac", "label": "Other (Cardiac)" },
+    { "id": "diabetes", "label": "Diabetes" },
+    { "id": "epilepsy", "label": "Epilepsy" },
+    { "id": "cancer", "label": "Cancer" },
+    { "id": "thyroid", "label": "Thyroid Disease" },
+    { "id": "kidney", "label": "Kidney Disease" }
+  ]
+  

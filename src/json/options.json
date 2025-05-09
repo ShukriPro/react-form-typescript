@@ -1,0 +1,50 @@
+{
+    "requirements": [
+      {
+        "id": 1,
+        "option": "I hold a resident visa or a permanent resident visa (or a residence permit if issued before December 2010).",
+        "description": "One of:\n- Passport with resident visa OR\n- Passport with permanent resident visa OR\n- Social security benefit papers (except emergency benefit)\n\nAND:\n- Two forms of supporting identity information, one with a photo (unless main proof is passport).\n\nIf you became a resident before December 2010, you will hold a residence permit. This is now called a residence class visa"
+      },
+      {
+        "id": 2,
+        "option": "I am an Australian citizen or Australian permanent resident AND able to show I have been in New Zealand or intend to stay in New Zealand for at least 2 consecutive years.",
+        "description": "One of:\n- Australian passport OR\n- Other passport with Australian permanent resident/resident return visa\n\nAnd:\n- Evidence that New Zealand has been/will be your principal place of residence for at least two years (e.g. employment, house purchase). The two years is counted from your arrival date in New Zealand."
+      },
+      {
+        "id": 3,
+        "option": "I have a current work visa/permit and can show that I am legally able to be in New Zealand for at least 2 years (previous visas/permits included).",
+        "description": "One of:\n- Passport & a current work visa that allows for a total continuous stay of at least 2 years OR\n- Passport & a current work visa and other visa/permit held immediately prior that allows a consecutive 24 month stay.\n\nNB: if your visa was issued before December 2010, it will be called a work permit."
+      },
+      {
+        "id": 4,
+        "option": "I am an interim visa holder who was eligible immediately before my interim visa started.",
+        "description": "Interim visa letter plus evidence of eligibility before the interim visa (eg. a letter from Immigration NZ with information on visas held prior to the interim visa, including time spent outside NZ).\n\nNB: An assessment of former eligibility will need to be made."
+      },
+      {
+        "id": 5,
+        "option": "I am a refugee or protected person OR in the process of applying for, or appealing refugee or protection status, OR a victim or suspected victim of people trafficking.",
+        "description": "One of:\n- Refugee travel document issued under the Passport Act 1992 OR\n- Certificate of Identity (COI) - If the COI states the person has residency status, the Immigration NZ letters below are not necessary.\n\nAND one of:\n- Proof of refugee status/application such as a recent letter from Immigration NZ confirming that the person has been recognised as a refugee or has a current application for refugee status\n- A recent letter from the Immigration and Protection Tribunal confirming the person is appealing against a refusal of refugee status\n- A letter from the Police stating the person is a victim or suspected victim of people trafficking."
+      },
+      {
+        "id": 6,
+        "option": "I am under 18 years and in the care and control of a parent/legal guardian/adopting parent who meets one criterion in the clauses above OR in the control of the Chief Executive of the Ministry of Social Development.",
+        "description": "Evidence that the child is in the care and control of an eligible adult, who is their legal guardian, parent or in the process of adopting the child or becoming their legal guardian. (Birth certificate, adoption papers, guardianship papers or, for a child being adopted: CYF social worker confirmation or NZ Family Court confirmation). See relevant section for proof of adult’s eligibility."
+      },
+      {
+        "id": 7,
+        "option": "I am a NZ Aid Programme student studying in NZ and receiving Official Development Assistance funding (or their partner or child under 18 years old).",
+        "description": "Both:\n- Passport with a current NZ student visa AND\n- Documents that indicate the person is a NZ Aid Programme student, or the partner or child of one.\n\nFor partners and dependants:\n- Evidence of Official Development Assistance funding on the basis of relationship."
+      },
+      {
+        "id": 8,
+        "option": "I am participating in the Ministry of Education Foreign Language Teaching Assistantship scheme.",
+        "description": "Both:\n- Passport with a current work visa AND\n- ‘To whom it may concern’ letter signed by International Languages Aotearoa NZ or Uniservices stating that the person is currently a teacher on this scheme."
+      },
+      {
+        "id": 9,
+        "option": "I am a Commonwealth Scholarship holder studying in NZ and receiving funding from a New Zealand university under the Commonwealth Scholarship and Fellowship Fund.",
+        "description": "Both:\n- Passport with a student visa AND\n- Documents that confirm the person is currently studying under the Commonwealth Scholarship and Fellowship Plan."
+      }
+    ]
+  }
+  

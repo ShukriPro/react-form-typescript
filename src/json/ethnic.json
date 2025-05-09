@@ -1,0 +1,41 @@
+[
+    {
+      "label": "New Zealand European (11)",
+      "hasDetail": false
+    },
+    {
+      "label": "Māori (21)",
+      "hasDetail": true,
+      "placeholder": "Enter your iwi (if applicable)"
+    },
+    {
+      "label": "Samoan (31)",
+      "hasDetail": false
+    },
+    {
+      "label": "Cook Island Māori (32)",
+      "hasDetail": false
+    },
+    {
+      "label": "Tongan (33)",
+      "hasDetail": false
+    },
+    {
+      "label": "Niuean (34)",
+      "hasDetail": false
+    },
+    {
+      "label": "Chinese (42)",
+      "hasDetail": false
+    },
+    {
+      "label": "Indian (43)",
+      "hasDetail": false
+    },
+    {
+      "label": "Other (such as Dutch, Japanese, Tokelauan)",
+      "hasDetail": true,
+      "placeholder": "Please specify (if applicable)"
+    }
+  ]
+  
