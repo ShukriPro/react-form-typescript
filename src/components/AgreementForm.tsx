@@ -2,6 +2,7 @@ import { useState } from "react";
 import SignatureModal from "./SignatureModal";
 import Relationships from "../json/relationships.json";
 function AgreementForm() {
+    
     const [agreementData, setAgreementData] = useState(() => {
         return JSON.parse(localStorage.getItem("agreement") || "{}");
     });
@@ -21,14 +22,15 @@ function AgreementForm() {
     const closeSignatureModal = () => {
         setSignatureModalOpen(false);
     };
+
     const clearSignature = () => {
         localStorage.removeItem("signature");
         window.location.reload(); // Simple way to update the component
     };
     return (
         <form>
-               {/* Header Section */}
-               <div className="p-4 border bg-light text-center">
+            {/* Header Section */}
+            <div className="p-4 border bg-light text-center">
                 <label className="fw-bold">MY AGREEMENT TO THE ENROLMENT PROCESS</label>
                 <p className="small text-muted">
                     NB. Parent or Caregiver to sign if you are under 16 years
@@ -217,7 +219,6 @@ function AgreementForm() {
                     ))}
                 </div>
             )}
-            
             {/* Signature Section */}
             {isSignatureModalOpen && (
                 <SignatureModal onClose={closeSignatureModal} />
@@ -255,26 +256,26 @@ function AgreementForm() {
                         </label>
 
                         <div style={{ cursor: "pointer", width: "35%" }} onClick={openSignatureModal}>
-                <input 
-                    type="text" 
-                    className="form-control" 
-                    placeholder="Name" 
-                    value={agreementData.fullName || ""} 
-                     
-                    required
-                />
-            </div>
+                            <input
+                                type="text"
+                                className="form-control"
+                                placeholder="Name"
+                                value={agreementData.fullName || ""}
 
-            <div style={{ cursor: "pointer", width: "35%" }} onClick={openSignatureModal}>
-                <input 
-                    type="text" 
-                    className="form-control" 
-                    placeholder="dd/mm/yyyy" 
-                    value={agreementData.signatureDate || ""} 
-                     
-                    required
-                />
-            </div>
+                                required
+                            />
+                        </div>
+
+                        <div style={{ cursor: "pointer", width: "35%" }} onClick={openSignatureModal}>
+                            <input
+                                type="text"
+                                className="form-control"
+                                placeholder="dd/mm/yyyy"
+                                value={agreementData.signatureDate || ""}
+
+                                required
+                            />
+                        </div>
 
                         <button type="button" className="btn btn-secondary" onClick={openSignatureModal}>
                             Add Signature
@@ -286,110 +287,107 @@ function AgreementForm() {
                 )}
             </div>
             {/* Authority Details Section */}
-       {/* Authority Details Section */}
-<div className="p-3 border bg-light ">
-    <h6 className="fw-bold mb-1">Authority Details (where signatory is not the enrolling person)</h6>
-    <p className="text-muted small mb-3">
-        An authority has the legal right to sign for another person if for some reason they are unable to consent on their own behalf.
-    </p>
+            <div className="p-3 border bg-light ">
+                <h6 className="fw-bold mb-1">Authority Details (where signatory is not the enrolling person)</h6>
+                <p className="text-muted small mb-3">
+                    An authority has the legal right to sign for another person if for some reason they are unable to consent on their own behalf.
+                </p>
 
-    <div className="d-flex gap-3">
-        <div className="form-check">
-            <input
-                type="radio"
-                id="selfSigning"
-                name="authorityType"
-                value="Self-Signing"
-                checked={agreementData.authorityType === "Self-Signing"}
-                onChange={() => updateData("authorityType", "Self-Signing")}
-                className="form-check-input"
-            />
-            <label htmlFor="selfSigning" className="form-check-label">Self-Signing</label>
-        </div>
+                <div className="d-flex gap-3">
+                    <div className="form-check">
+                        <input
+                            type="radio"
+                            id="selfSigning"
+                            name="authorityType"
+                            value="Self-Signing"
+                            checked={agreementData.authorityType === "Self-Signing"}
+                            onChange={() => updateData("authorityType", "Self-Signing")}
+                            className="form-check-input"
+                        />
+                        <label htmlFor="selfSigning" className="form-check-label">Self-Signing</label>
+                    </div>
 
-        <div className="form-check">
-            <input
-                type="radio"
-                id="authority"
-                name="authorityType"
-                value="Authority"
-                checked={agreementData.authorityType === "Authority"}
-                onChange={() => updateData("authorityType", "Authority")}
-                className="form-check-input"
-            />
-            <label htmlFor="authority" className="form-check-label">Authority</label>
-        </div>
-    </div>
-</div>
+                    <div className="form-check">
+                        <input
+                            type="radio"
+                            id="authority"
+                            name="authorityType"
+                            value="Authority"
+                            checked={agreementData.authorityType === "Authority"}
+                            onChange={() => updateData("authorityType", "Authority")}
+                            className="form-check-input"
+                        />
+                        <label htmlFor="authority" className="form-check-label">Authority</label>
+                    </div>
+                </div>
+            </div>
+            {/* Conditional Authority Details Form */}
+            {agreementData.authorityType === "Authority" && (
+                <div className="p-3 border bg-light ">
+                    <h6 className="fw-bold mb-3">Authority Details</h6>
 
-{/* Conditional Authority Details Form */}
-{agreementData.authorityType === "Authority" && (
-    <div className="p-3 border bg-light ">
-        <h6 className="fw-bold mb-3">Authority Details</h6>
+                    <div className="mb-3">
+                        <label className="form-label">Full Name <span className="text-danger">*</span></label>
+                        <input
+                            type="text"
+                            className="form-control"
+                            value={agreementData.fullName || ""}
+                            onChange={(e) => updateData("fullName", e.target.value)}
+                            required
+                        />
+                    </div>
 
-        <div className="mb-3">
-            <label className="form-label">Full Name <span className="text-danger">*</span></label>
-            <input
-                type="text"
-                className="form-control"
-                value={agreementData.fullName || ""}
-                onChange={(e) => updateData("fullName", e.target.value)}
-                required
-            />
-        </div>
+                    <div className="mb-3">
+                        <label className="form-label">Relationship <span className="text-danger">*</span></label>
+                        <select
+                            className="form-select"
+                            value={agreementData.relationship || ""}
+                            onChange={(e) => updateData("relationship", e.target.value)}
+                            required
+                        >
+                            <option value="" disabled>Select Relationship</option>
+                            {Relationships.map((relationship: string, index: number) => (
+                                <option key={index} value={relationship}>
+                                    {relationship}
+                                </option>
+                            ))}
+                        </select>
+                    </div>
 
-        <div className="mb-3">
-            <label className="form-label">Relationship <span className="text-danger">*</span></label>
-            <select
-                className="form-select"
-                value={agreementData.relationship || ""}
-                onChange={(e) => updateData("relationship", e.target.value)}
-                required
+                    <div className="mb-3">
+                        <label className="form-label">Contact Phone <span className="text-danger">*</span></label>
+                        <input
+                            type="text"
+                            className="form-control"
+                            value={agreementData.contactPhone || ""}
+                            onChange={(e) => updateData("contactPhone", e.target.value)}
+                            required
+                        />
+                    </div>
+
+                    <div className="mb-3">
+                        <label className="form-label">Basis of Authority <span className="text-danger">*</span></label>
+                        <input
+                            type="text"
+                            className="form-control"
+                            value={agreementData.basisOfAuthority || ""}
+                            onChange={(e) => updateData("basisOfAuthority", e.target.value)}
+                            required
+                        />
+                    </div>
+                </div>
+            )}
+            {/* Submit Button */}
+            <button
+                type="submit"
+                className="btn btn-primary"
+                onClick={(e) => {
+                    // Handle form submission logic here
+                    console.log("Form submitted:", agreementData);
+                }}
             >
-                <option value="" disabled>Select Relationship</option>
-                {Relationships.map((relationship: string, index: number) => (
-                    <option key={index} value={relationship}>
-                        {relationship}
-                    </option>
-                ))}
-            </select>
-        </div>
-
-        <div className="mb-3">
-            <label className="form-label">Contact Phone <span className="text-danger">*</span></label>
-            <input
-                type="text"
-                className="form-control"
-                value={agreementData.contactPhone || ""}
-                onChange={(e) => updateData("contactPhone", e.target.value)}
-                required
-            />
-        </div>
-
-        <div className="mb-3">
-            <label className="form-label">Basis of Authority <span className="text-danger">*</span></label>
-            <input
-                type="text"
-                className="form-control"
-                value={agreementData.basisOfAuthority || ""}
-                onChange={(e) => updateData("basisOfAuthority", e.target.value)}
-                required
-            />
-        </div>
-    </div>
-)}
-
-         {/* Submit Button */}
-         <button
-                    type="submit"
-                    className="btn btn-primary"
-                    onClick={(e) => {
-                        // Handle form submission logic here
-                        console.log("Form submitted:", agreementData);
-                    }}
-                >
-                    Submit
-                </button>
+                Submit
+            </button>
         </form>
     );
 }

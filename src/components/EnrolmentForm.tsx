@@ -9,7 +9,6 @@ const EnrolmentForm: React.FC = () => {
     useEffect(() => {
         // Ensure data is stored first
         storeData();
-
         // Retrieve countries data from localStorage
         const storedCountries = localStorage.getItem('countries');
         if (storedCountries) {
