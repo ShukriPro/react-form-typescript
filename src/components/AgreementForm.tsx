@@ -28,7 +28,7 @@ function AgreementForm() {
         window.location.reload(); // Simple way to update the component
     };
     return (
-        <form>
+        <>
             {/* Header Section */}
             <div className="p-4 border bg-light text-center">
                 <label className="fw-bold">MY AGREEMENT TO THE ENROLMENT PROCESS</label>
@@ -299,6 +299,7 @@ function AgreementForm() {
                             type="radio"
                             id="selfSigning"
                             name="authorityType"
+                            required
                             value="Self-Signing"
                             checked={agreementData.authorityType === "Self-Signing"}
                             onChange={() => updateData("authorityType", "Self-Signing")}
@@ -377,18 +378,8 @@ function AgreementForm() {
                     </div>
                 </div>
             )}
-            {/* Submit Button */}
-            <button
-                type="submit"
-                className="btn btn-primary"
-                onClick={(e) => {
-                    // Handle form submission logic here
-                    console.log("Form submitted:", agreementData);
-                }}
-            >
-                Submit
-            </button>
-        </form>
+           
+        </>
     );
 }
 

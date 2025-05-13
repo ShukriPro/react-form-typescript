@@ -49,7 +49,7 @@ function DeclarationForm() {
     };
 
     return (
-        <form>
+        <>
             {/* Header Section */}
             <div className="p-4 border bg-light text-center">
                 <label className="fw-bold">MY DECLARATION OF ENTITLEMENT AND ELIGIBILITY</label>
@@ -328,7 +328,7 @@ function DeclarationForm() {
                     required={declarationData.documents?.length === 0}
                 />
             </div>
-        </form>
+        </>
     );
 }
 

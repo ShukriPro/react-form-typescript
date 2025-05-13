@@ -12,7 +12,7 @@ function HealthForm() {
   };
 
   return (
-    <form>
+    <>
       {/* Personal Information Section */}
       <div className="p-3 border bg-light text-center">
         <h6 className="fw-bold mb-1">New Patient Health Questionnaire</h6>
@@ -1534,8 +1534,8 @@ function HealthForm() {
       )}
 
 
-
-    </form>
+  
+    </>
   );
 }
 
